@@ -1,18 +1,24 @@
 <?php
+// echo '<pre>';
+// print_r($data);
+// echo '</pre>';
 
-
-class Home
+class Home extends Controller
 {
+    public $model_home;
+    public function __construct(){
+        $this->model_home = $this->model('HomeModel');
+    }
     public function index(){
-        echo  'a';
+        $data = $this->model_home->getlist();
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+
+        $detail = $this->model_home->getDetail(0);
+        echo '<pre>';
+        print_r($detail);
+        echo '</pre>';
     }
 
-    public function detail($id='',$slug=''){
-        echo 'id sản phẩm: ' . $id . '<br>';
-        echo 'slug: ' . $slug;
-    }
-
-    public function search($keywords = ''){
-        echo 'từ khóa cần tìm' . $keywords;
-    }
 }
