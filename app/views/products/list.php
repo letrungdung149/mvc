@@ -1,5 +1,4 @@
+danh sach san pham <Br>
 <?php
 
-echo '<pre>';
-print_r($data);
-echo '</pre>';
+echo $page_title;
